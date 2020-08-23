@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var nextButtonStyle: UIButton!
+    @IBOutlet weak var reverseButtonStyle: UIButton!
     @IBOutlet weak var actionButtonStyle: UIButton!
     
     let pictureList = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png"]
@@ -57,13 +59,28 @@ class ViewController: UIViewController {
     
     @IBAction func actionButton(_ sender: Any) {
         if timer == nil {
+            nextButtonStyle.isEnabled = false
+            reverseButtonStyle.isEnabled = false
             actionButtonStyle.setTitle("停止", for: .normal)
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(pictureDisplay(_:)), userInfo: nil, repeats: true)
         } else {
+            nextButtonStyle.isEnabled = true
+            reverseButtonStyle.isEnabled = true
             actionButtonStyle.setTitle("再生", for: .normal)
             self.timer.invalidate()
             self.timer = nil
         }
+    }
+    
+    @IBAction func tapPicuture(_ sender: Any) {
+        if timer != nil {
+            nextButtonStyle.isEnabled = true
+            reverseButtonStyle.isEnabled = true
+            actionButtonStyle.setTitle("再生", for: .normal)
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        performSegue(withIdentifier: "toNext", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

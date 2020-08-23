@@ -44,7 +44,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="vU2-OW-NUE">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vU2-OW-NUE">
                                 <rect key="frame" x="50" y="144" width="314" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -68,13 +68,16 @@
                     </view>
                     <connections>
                         <outlet property="actionButtonStyle" destination="rIu-Qm-5Qy" id="qGf-nW-Fjp"/>
+                        <outlet property="nextButtonStyle" destination="AlE-vB-n2x" id="e7I-uk-4Ya"/>
                         <outlet property="picture" destination="vU2-OW-NUE" id="YYp-yu-hc0"/>
+                        <outlet property="reverseButtonStyle" destination="jv0-hI-PSZ" id="Ykr-Z5-HVx"/>
+                        <segue destination="eaf-wr-wFa" kind="show" identifier="toNext" id="H37-5y-s9A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ug5-XD-roA">
                     <connections>
-                        <segue destination="eaf-wr-wFa" kind="show" id="4eQ-bz-Eyw"/>
+                        <action selector="tapPicuture:" destination="BYZ-38-t0r" id="ZsM-jD-AO8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -88,7 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="BGM-Vj-1Vg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGM-Vj-1Vg">
                                 <rect key="frame" x="0.0" y="60" width="414" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="prD-E6-pt8"/>
@@ -125,6 +128,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="img1" width="643" height="800"/>
+        <image name="img1.png" width="643" height="800"/>
     </resources>
 </document>
